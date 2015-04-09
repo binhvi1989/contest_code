@@ -52,9 +52,9 @@
   
 	    var province = $('<select/>').attr({ 'id': 'agegate-province', 'name': 'agegate-province' }).append(function(){
 			var provinces = '';
-			   provinces += '<option value="-1">Province</option>';
-			  provinces += '<option value="18">Alberta</option>';
-			   provinces += '<option value="19">​​​​​​​Britis​h Colu​mbia</option>';
+			   provinces += '<option value="-1">Province/Territory</option>';
+			  provinces += '<option value="18">Alberta</option> ';
+			   provinces += '<option value="19">British Columbia</option>';
 			    provinces += '<option value="18">Manitoba</option>';
 				 provinces += '<option value="19">New Brunswick</option>';
 				  provinces += '<option value="19">Newfoundland and Labrador</option>';
@@ -121,7 +121,7 @@
         if((today - birthday) < 0){
           o.underage();
           if(cookie_js){
-           // $.cookie('age_gate', 'underage');
+            $.cookie('age_gate', 'underage');
           }
         }
         else{
@@ -133,7 +133,11 @@
       });
 
       var b = '<br/>';
-      gate.append(title)	  	 
+     var header =$(".gate-header"),footer=$(".gate-footer");
+	 header.show();
+	 footer.show();
+	  gate.append(header)	 		
+	  gate.append(title)	  	 
           .append("<div class='province-firlds fields'></div>")
           .append("<div class='select-firlds fields'></div>")
           .append(verify);
@@ -147,7 +151,10 @@
 		gate.find(".select-firlds").append(year);
 		gate.wrap("<div class='over-flow'></div>"); 
 		 $(this).css({"overflow": "hidden"})
+		 gate.append(footer)
     });
+	
+	
   };
 
   $.fn.agegate.defaults = {
@@ -159,7 +166,7 @@
     label_day:     'Day:',
     label_month:   'Month:',
     label_year:    'Year:',
-    label_request: 'Please Enter Your Birthday:',
+    label_request: 'Your Location',
     month_names:   ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     legal: function(){},
     underage: function(){}
