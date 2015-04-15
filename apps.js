@@ -121,7 +121,7 @@
         if((today - birthday) < 0){
           o.underage();
           if(cookie_js){
-            $.cookie('age_gate', 'underage');
+            //$.cookie('age_gate', 'underage');
           }
         }
         else{
