@@ -146,7 +146,8 @@
 	   
 	  $(this).prepend(gate);
 		gate.find(".province-firlds").empty().append(province)
-		gate.find(".select-firlds").empty().append(month);
+		gate.find(".select-firlds").empty().prepend('<strong class="title">Your birthday</strong>');
+		gate.find(".select-firlds").append(month);
 	    gate.find(".select-firlds").append(day)
 		gate.find(".select-firlds").append(year);
 		gate.wrap("<div class='over-flow'></div>"); 
