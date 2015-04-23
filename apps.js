@@ -127,7 +127,7 @@
         else{
           o.legal();
           if(cookie_js){
-            $.cookie('age_gate', 'legal');
+            $.cookie('age_gate', 'legal',{expires:7});
           }
         }
       });
